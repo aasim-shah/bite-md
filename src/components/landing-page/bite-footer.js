@@ -32,7 +32,7 @@ const BiteFooter = () => {
           justifyContent={isSmall ? "center" : "space-between"}
           alignItems="center"
           flexDirection={isSmall ? "column" : "row"}
-          textAlign={isSmall ? "center" : "left"}
+          textAlign={isSmall ? "left" : "left"}
         >
           {/* Logo Section */}
           <Box sx={{ width: "6rem", height: "6rem", mb: isSmall ? 3 : 0 }}>

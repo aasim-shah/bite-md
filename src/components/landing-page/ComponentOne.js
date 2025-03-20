@@ -57,7 +57,7 @@ const ComponentOne = ({ landingPageData, configData, handleOrderNow }) => {
             alignItems: "center",
             marginTop: "4rem",
             marginBottom: ".1rem",
-            height: "55rem",
+            height: isSmall ? "64rem" : "55rem",
             minHeight: "55rem",
             display: "flex",
           }}
@@ -72,7 +72,7 @@ const ComponentOne = ({ landingPageData, configData, handleOrderNow }) => {
               flexDirection: "column",
               justifyContent: "center",
               alignItems: "center",
-              top: "-14rem",
+              top: isSmall ? "-7rem" : "-14rem",
               borderRadius: "20px",
               display: "flex",
             }}

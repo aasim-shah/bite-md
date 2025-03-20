@@ -70,6 +70,7 @@ const LandingPage = ({ configData, landingPageData }) => {
           landingPageData={landingPageData}
           handleOrderNow={handleOrderNow}
         /> */}
+
         <div
           style={{
             position: "relative",
@@ -79,13 +80,38 @@ const LandingPage = ({ configData, landingPageData }) => {
             backgroundPosition: "center",
             minHeight: "33rem",
             height: "33rem",
+            display: "flex",
+            alignItems: "center",
+            padding: "0 5%",
           }}
         >
-          <div style={{ position: "absolute", top: "30%", left: "13%" }}>
-            <p style={{ color: "white", fontSize: "1.3rem", fontWeight: 900 }}>
+          <div
+            style={{
+              position: "absolute",
+              top: "30%",
+              left: "13%",
+              width: "80%",
+              maxWidth: "600px",
+            }}
+          >
+            <p
+              style={{
+                color: "white",
+                fontSize: "1.3rem",
+                fontWeight: 900,
+                lineHeight: "1.5",
+              }}
+            >
               {landingPageData.header_title}
             </p>
-            <p style={{ color: "#273472", fontSize: "1rem", fontWeight: 700 }}>
+            <p
+              style={{
+                color: "#273472",
+                fontSize: "1rem",
+                fontWeight: 700,
+                lineHeight: "1.4",
+              }}
+            >
               {landingPageData.header_sub_title}
             </p>
           </div>

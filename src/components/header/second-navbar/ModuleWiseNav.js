@@ -14,6 +14,7 @@ import CustomImageContainer from "../../CustomImageContainer";
 import AddressReselect from "../top-navbar/address-reselect/AddressReselect";
 import DrawerMenu from "../top-navbar/drawer-menu/DrawerMenu";
 import MobileModuleSelection from "./mobile-module-select";
+import LogoSide from "components/logo/LogoSide";
 
 const ModuleWiseNav = (props) => {
   const {
@@ -127,19 +128,29 @@ const ModuleWiseNav = (props) => {
             <CustomBoxFullWidth>
               <Grid
                 container
-                justifyContent="center"
+                justifyContent="space-between"
                 alignItems="center"
                 spacing={1}
               >
-                <Grid item xs={4} sm={4} align="left">
+                <Grid padding={1} item xs={2} sm={2}>
                   {router.pathname === "/home" && !router.query.search ? (
                     modules.length >= 2 ? (
                       <MobileModuleSelection />
                     ) : (
-                      getIcon()
+                      <LogoSide
+                        width="200px"
+                        height="50px"
+                        configData={configData}
+                        objectFit="contain"
+                      />
                     )
                   ) : (
-                    getIcon()
+                    <LogoSide
+                      width="200px"
+                      height="40px"
+                      configData={configData}
+                      objectFit="contain"
+                    />
                   )}
                 </Grid>
                 {location ? (

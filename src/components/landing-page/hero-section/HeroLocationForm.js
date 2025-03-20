@@ -445,7 +445,7 @@ const HeroLocationForm = () => {
               </HeroFormItem>
             </HeroFormInputWrapper>
 
-            {isXSmall ? (
+            {/* {isXSmall ? (
               <IconButton
                 onClick={handleOpen}
                 sx={{
@@ -461,32 +461,32 @@ const HeroLocationForm = () => {
               >
                 <MapMarkerIcon />
               </IconButton>
-            ) : (
-              <button
-                style={{
-                  height: "3rem",
-                  width: "3rem",
-                  borderRadius: "2rem",
-                  backgroundColor: theme.palette.primary.main,
-                  color: "white",
-                  display: "flex",
+            ) : ( */}
+            <button
+              style={{
+                height: "3rem",
+                width: "3rem",
+                borderRadius: "2rem",
+                backgroundColor: theme.palette.primary.main,
+                color: "white",
+                display: "flex",
 
-                  alignItems: "center",
-                  justifyContent: "center",
+                alignItems: "center",
+                justifyContent: "center",
 
-                  // cursor: (!location?.lat || isLoadingGeoCode) ? "not-allowed" : "pointer"
-                  "&:disabled": {
-                    cursor: "not-allowed",
-                    pointerEvents: "all !important",
-                  },
-                }}
-                onClick={() => setLocationEnable()}
-                radiuschange={isXSmall ? "false" : "true"}
-                disabled={!location?.lat || isLoadingGeoCode}
-              >
-                <ChevronRightIcon />
-              </button>
-            )}
+                // cursor: (!location?.lat || isLoadingGeoCode) ? "not-allowed" : "pointer"
+                "&:disabled": {
+                  cursor: "not-allowed",
+                  pointerEvents: "all !important",
+                },
+              }}
+              onClick={() => setLocationEnable()}
+              radiuschange={isXSmall ? "false" : "true"}
+              disabled={!location?.lat || isLoadingGeoCode}
+            >
+              <ChevronRightIcon />
+            </button>
+            {/* )} */}
           </div>{" "}
         </CustomStackFullWidth>
         {open && (
