@@ -254,7 +254,8 @@ export const baseThemeOptions = {
       fontWeight: 600,
     },
     // fontFamily: '"Rubik","sans-serif"',
-    fontFamily: '"Poppins", sans-serif',
+    // fontFamily: '"Poppins", sans-serif',
+    fontFamily: "Caros Soft, Arial, sans-serif",
     //this is default font size for typography
     body1: {
       fontSize: "0.875rem",

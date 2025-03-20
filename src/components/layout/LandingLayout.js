@@ -11,7 +11,7 @@ export const MainLayoutRoot = styled(Stack)(({ theme }) => ({
   height: "100vh",
 }));
 
-export const LandingLayout = ({ children, configData, landingPageData }) => {
+export const LandingLayout = ({ children, configData }) => {
   const { data, refetch } = useGetLandingPage();
   useEffect(() => {
     refetch();
@@ -24,7 +24,6 @@ export const LandingLayout = ({ children, configData, landingPageData }) => {
       </header>
       {children}
       <footer>
-        {/* <FooterComponent configData={configData} landingPageData={data} /> */}
         <BiteFooter />
       </footer>
     </MainLayoutRoot>

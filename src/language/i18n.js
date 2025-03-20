@@ -4,7 +4,8 @@ import { english } from "./en";
 import { bengali } from "./bn";
 import { arabic } from "./ar";
 import { spain } from "./es";
-import { romanianMoldova } from "./ro";
+import { romanianMoldova } from "./mo";
+import { romanian } from "./ro";
 
 // the translations
 // (tip move them in a JSON file and import them,
@@ -25,14 +26,17 @@ const resources = {
   mo: {
     translation: romanianMoldova,
   },
+  ro: {
+    translation: romanian,
+  },
 };
 
 i18n
   .use(initReactI18next) // passes i18n down to react-i18next
   .init({
     resources,
-    lng: "en", // language to use, more information here: https://www.i18next.com/overview/configuration-options#languages-namespaces-resources
-    fallbackLng: "en",
+    lng: "ro", // language to use, more information here: https://www.i18next.com/overview/configuration-options#languages-namespaces-resources
+    fallbackLng: "ro",
     interpolation: {
       escapeValue: false, // react already safes from xss
     },

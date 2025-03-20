@@ -420,7 +420,7 @@ const SecondNavBar = ({ configData }) => {
                 justifyContent="center"
                 alignItems="center"
                 display={"flex"}
-                width={"10rem"}
+                width={"14rem"}
                 style={{ marginLeft: "1rem" }}
               >
                 <SignInButton onClick={() => setOpenSignIn(true)}>

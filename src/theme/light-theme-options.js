@@ -36,7 +36,7 @@ const lightYellow = "#FFF7EA";
 const cream = "#F0DFD7";
 
 const primary = {
-  main: "#ED7950",
+  main: "#EF7951",
   deep: "#C65E3E",
   light: "#F8C0A6",
   dark: "#A44A2D",

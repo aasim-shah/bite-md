@@ -169,7 +169,7 @@ export const StyledMenu = styled((props) => (
 }));
 export const NavLinkStyle = styled(Stack)(({ theme, language_direction }) => ({
   color: `${theme.palette.mode === "dark" ? "#fff" : "#000"}`,
-  fontSize: "13px",
+  fontSize: "12px",
 
   // marginRight: language_direction === 'rtl' ? '16px' : '0px',
   underLine: "none",

@@ -40,7 +40,7 @@ const foodCardColor = neutral[800];
 const roundStackOne = "rgba(255, 255, 255, 0.04)";
 const roundStackTwo = "rgba(255, 255, 255, 0.06)";
 const primary = {
-  main: "#ED7950",
+  main: "#EF7951",
   deep: "#C65E3E",
   light: "#F8C0A6",
   dark: "#A44A2D",
