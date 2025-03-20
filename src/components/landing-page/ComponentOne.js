@@ -64,7 +64,7 @@ const ComponentOne = ({ landingPageData, configData, handleOrderNow }) => {
         >
           <div
             style={{
-              backgroundColor: theme.palette.cream,
+              backgroundColor: theme.palette.lightYellow,
               width: "90%",
               height: "55rem",
               margin: " auto",
