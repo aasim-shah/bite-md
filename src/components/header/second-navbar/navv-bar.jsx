@@ -1,6 +1,7 @@
 import Link from "next/link";
 import React from "react";
 import { NavLinkStyle } from "../NavBar.style";
+import { t } from "i18next";
 
 export default function NewNavBar() {
   return (
@@ -17,7 +18,7 @@ export default function NewNavBar() {
           underline="none"
           sx={{ cursor: "pointer", color: "white" }}
         >
-          Home
+          {t("Home")}
         </NavLinkStyle>
       </Link>
       <Link href="/about-us">
@@ -25,7 +26,7 @@ export default function NewNavBar() {
           underline="none"
           sx={{ cursor: "pointer", color: "white" }}
         >
-          About us
+          {t("About Us")}
         </NavLinkStyle>
       </Link>
       <Link href="/privacy-policy">
@@ -33,7 +34,7 @@ export default function NewNavBar() {
           underline="none"
           sx={{ cursor: "pointer", color: "white" }}
         >
-          Privacy Policy
+          {t("Privacy Policy")}
         </NavLinkStyle>
       </Link>
       <Link href="/terms-and-conditions">
@@ -41,7 +42,7 @@ export default function NewNavBar() {
           underline="none"
           sx={{ cursor: "pointer", color: "white" }}
         >
-          Terms and Conditions
+          {t("terms and conditions")}
         </NavLinkStyle>
       </Link>
       <Link href="/contact">
@@ -49,7 +50,7 @@ export default function NewNavBar() {
           underline="none"
           sx={{ cursor: "pointer", color: "white" }}
         >
-          Contact Us
+          {t("Contact Us")}
         </NavLinkStyle>
       </Link>
     </nav>

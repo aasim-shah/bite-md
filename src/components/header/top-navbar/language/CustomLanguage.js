@@ -28,7 +28,7 @@ import {
   CustomStackFullWidth,
 } from "../../../../styled-components/CustomStyles.style";
 import { StyledMenu, TopBarButton } from "../../NavBar.style";
-import { languageList } from "./languageList";
+// import { languageList } from "./languageList";
 import { haveRtlLanguages } from "./rtlLanguageList";
 
 const getValues = (settings) => ({
@@ -45,6 +45,9 @@ const CustomLanguage = ({
   noText,
 }) => {
   const { configData } = useSelector((state) => state.configData);
+
+  const [languageList, setLanguageList] = useState(configData?.sys_language);
+
   const [selectedLanguage, setSelectedLanguage] = useState(null);
   const [openModal, setOpenModal] = useState(false);
   const theme = useTheme();
@@ -82,6 +85,12 @@ const CustomLanguage = ({
   }, [language]);
 
   useEffect(() => {
+    setLanguageList(configData?.sys_language);
+  }, [configData]);
+
+  console.log({ languageList });
+
+  useEffect(() => {
     if (selectedLanguage) {
       setOpenModal(true);
     }
@@ -106,18 +115,19 @@ const CustomLanguage = ({
 
   const handleChangeLanguage = (lan) => {
     //i18n.changeLanguage(lan?.languageCode);
-    dispatch(setLanguage(lan?.languageCode));
-    dispatch(setCountryCode(lan?.countryCode));
-    cookie.set("languageSetting", lan?.languageCode);
-    localStorage.setItem("language-setting", JSON.stringify(lan?.languageCode));
-    localStorage.setItem("country", JSON.stringify(lan?.countryCode));
+    dispatch(setLanguage(lan?.key));
+    dispatch(setCountryCode(""));
+    cookie.set("languageSetting", lan?.key);
+    localStorage.setItem("language-setting", JSON.stringify(lan?.key));
+    localStorage.setItem("country", JSON.stringify(lan?.key));
     toast.success(t("Language has been changed"), {
       id: "lan",
     });
 
     saveSettings({
       ...values,
-      direction: isRTLLanguage(lan?.languageCode) ? "rtl" : "ltr",
+      // direction: isRTLLanguage(lan?.languageCode) ? "rtl" : "ltr",
+      direction: lan.direction,
     });
     window.location.reload();
     handleClose?.();
@@ -162,18 +172,18 @@ const CustomLanguage = ({
             color: theme.palette.primary.main + "!important",
           },
         }}
-        startIcon={
-          <Stack color={theme.palette.neutral[1000]}>
-            <img
-              alt="start"
-              width="20"
-              src={
-                languageList?.find((item) => item?.languageCode === language)
-                  ?.countryFlag
-              }
-            />
-          </Stack>
-        }
+        // startIcon={
+        //   <Stack color={theme.palette.neutral[1000]}>
+        //     <img
+        //       alt="start"
+        //       width="20"
+        //       src={
+        //         languageList?.find((item) => item?.languageCode === language)
+        //           ?.countryFlag
+        //       }
+        //     />
+        //   </Stack>
+        // }
         endIcon={
           <Stack color={theme.palette.neutral[1000]}>
             <KeyboardArrowDownIcon />
@@ -182,10 +192,7 @@ const CustomLanguage = ({
       >
         {!noText && (
           <Typography color={theme.palette.neutral[1000]}>
-            {
-              languageList?.find((item) => item?.languageCode === language)
-                ?.languageName
-            }
+            {languageList?.find((item) => item?.key === language)?.value}
           </Typography>
         )}
       </TopBarButton>
@@ -210,10 +217,10 @@ const CustomLanguage = ({
               },
             }}
           >
-            <ListItemIcon>
+            {/* <ListItemIcon>
               <img width="20" src={lan?.countryFlag} alt="flag" />
-            </ListItemIcon>
-            {lan.languageName}
+            </ListItemIcon> */}
+            {lan.value}
           </MenuItem>
         ))}
       </StyledMenu>

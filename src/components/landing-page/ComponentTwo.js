@@ -13,6 +13,7 @@ import DownloadApps from "./DownloadApps";
 import SolutionSvg from "./SolutionSvg";
 import { CustomBoxFullWidth } from "styled-components/CustomStyles.style";
 import Image from "next/image";
+import Link from "next/link";
 
 export const ComponentTwoContainer = styled(Box)(
   ({ theme, paddingTop, paddingBottom }) => ({
@@ -108,7 +109,10 @@ const ComponentTwo = ({ landingPageData }) => {
                 alignItems: "center",
               }}
             >
-              <div style={{ width: "10rem", height: "3rem" }}>
+              <Link
+                href={landingPageData.download_user_app_links.playstore_url}
+                style={{ width: "10rem", height: "3rem" }}
+              >
                 <Image
                   src="/landingpage/playstore.png"
                   alt="Playstore"
@@ -116,8 +120,11 @@ const ComponentTwo = ({ landingPageData }) => {
                   style={{ width: "100%", height: "100%" }}
                   height={500}
                 />
-              </div>
-              <div style={{ width: "10rem", height: "3rem" }}>
+              </Link>
+              <Link
+                href={landingPageData.download_user_app_links.apple_store_url}
+                style={{ width: "10rem", height: "3rem" }}
+              >
                 <Image
                   src="/landingpage/appstore.png"
                   alt="Appstore"
@@ -125,7 +132,7 @@ const ComponentTwo = ({ landingPageData }) => {
                   style={{ width: "100%", height: "100%" }}
                   height={500}
                 />
-              </div>
+              </Link>
             </div>
           </Grid>
 

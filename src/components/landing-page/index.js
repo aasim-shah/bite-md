@@ -60,6 +60,8 @@ const LandingPage = ({ configData, landingPageData }) => {
     }
   };
 
+  console.log({ landingPageData });
+
   return (
     <>
       <PushNotificationLayout>
@@ -81,10 +83,10 @@ const LandingPage = ({ configData, landingPageData }) => {
         >
           <div style={{ position: "absolute", top: "30%", left: "13%" }}>
             <p style={{ color: "white", fontSize: "1.3rem", fontWeight: 900 }}>
-              FOOD PRODUCTS, MEALS, AND MUCH MORE{" "}
+              {landingPageData.header_title}
             </p>
             <p style={{ color: "#273472", fontSize: "1rem", fontWeight: 700 }}>
-              Just a click away, delivered easily, right to your door!{" "}
+              {landingPageData.header_sub_title}
             </p>
           </div>
         </div>
@@ -104,16 +106,8 @@ const LandingPage = ({ configData, landingPageData }) => {
         {/* {landingPageData?.available_zone_status === 1 &&
         landingPageData?.available_zone_list?.length > 0 ? (
           <AvailableZoneSection landingPageData={landingPageData} />
-        ) : null}
-
-        {landingPageData?.earning_seller_status ||
-        landingPageData?.earning_dm_status ? (
-          <Registration
-            configData={configData}
-            data={landingPageData}
-            isSmall={isSmall}
-          />
         ) : null} */}
+
         {/* {landingPageData?.fixed_promotional_banner_full_url ? (
           <DiscountBanner
             bannerImage={landingPageData?.fixed_promotional_banner_full_url}
@@ -140,13 +134,27 @@ const LandingPage = ({ configData, landingPageData }) => {
           }}
         >
           <ComponentThree />
-          <EarnMoney />
-          <CustomReviews />
+
+          {/* <EarnMoney /> */}
+
+          {/* {landingPageData?.earning_seller_status ||
+          landingPageData?.earning_dm_status ? ( */}
+          {landingPageData?.earning_title &&
+            landingPageData.earning_sub_title && (
+              <EarnMoney
+                configData={configData}
+                data={landingPageData}
+                isSmall={isSmall}
+              />
+            )}
+
+          {/* <CustomReviews /> */}
+          {landingPageData?.testimonial_list?.length > 0 ? (
+            // <Testimonials landingPageData={landingPageData} isSmall={isSmall} />
+            <CustomReviews data={landingPageData} isSmall={isSmall} />
+          ) : null}
         </div>
 
-        {/* {landingPageData?.testimonial_list?.length > 0 ? (
-          <Testimonials landingPageData={landingPageData} isSmall={isSmall} />
-        ) : null}
         {open && (
           <MapModal
             open={open}
@@ -154,7 +162,7 @@ const LandingPage = ({ configData, landingPageData }) => {
             coords={coords}
             disableAutoFocus
           />
-        )} */}
+        )}
         {/* <NoSsr>
           <CookiesConsent text={configData?.cookies_text} />
         </NoSsr> */}

@@ -7,11 +7,19 @@ import {
   useMediaQuery,
   useTheme,
 } from "@mui/material";
+import { t } from "i18next";
 import Image from "next/image";
+import { useSelector } from "react-redux";
 
 const BiteFooter = () => {
   const theme = useTheme();
   const isSmall = useMediaQuery(theme.breakpoints.down("sm"));
+
+  const { configData } = useSelector((state) => state.configData);
+
+  if (!configData) {
+    return null;
+  }
 
   return (
     <Box
@@ -58,7 +66,7 @@ const BiteFooter = () => {
                 underline="hover"
                 display="block"
               >
-                Privacy Policy
+                {t("Privacy Policy")}
               </Link>
               <Link
                 href="/terms"
@@ -66,7 +74,7 @@ const BiteFooter = () => {
                 underline="hover"
                 display="block"
               >
-                Terms & Conditions
+                {t("terms and conditions")}
               </Link>
               <Link
                 href="/about"
@@ -74,20 +82,18 @@ const BiteFooter = () => {
                 underline="hover"
                 display="block"
               >
-                About Us
+                {t(" About Us")}
               </Link>
             </Grid>
 
             {/* Contact Us Section */}
             <Grid item xs={12} sm={4}>
               <Typography variant="h6" fontWeight={600} mb={1}>
-                Contact Us
+                {t("Contact Us")}
               </Typography>
-              <Typography variant="body1">
-                📍 Ciuflea Street 38, Chișinău 2001
-              </Typography>
-              <Typography variant="body1">📞 +373608721165</Typography>
-              <Typography variant="body1">✉️ mihaela@bite.md</Typography>
+              <Typography variant="body1">📍 {configData.address}</Typography>
+              <Typography variant="body1">📞 {configData.phone}</Typography>
+              <Typography variant="body1">✉️ {configData.email} </Typography>
             </Grid>
           </Box>
         </Grid>
@@ -130,7 +136,7 @@ const BiteFooter = () => {
 
       {/* Copyright */}
       <Typography textAlign="center" mt={6} variant="body2">
-        © 2024-2025 BITE Corporation. All rights reserved by BITE Corporation.
+        {configData.cookies_text}
       </Typography>
     </Box>
   );

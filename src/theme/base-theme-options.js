@@ -253,7 +253,8 @@ export const baseThemeOptions = {
     button: {
       fontWeight: 600,
     },
-    fontFamily: '"Rubik","sans-serif"',
+    // fontFamily: '"Rubik","sans-serif"',
+    fontFamily: '"Poppins", sans-serif',
     //this is default font size for typography
     body1: {
       fontSize: "0.875rem",

@@ -87,6 +87,8 @@ const CustomLanguage = ({ formmobilemenu }) => {
     window.location.reload();
   };
 
+  console.log("configData11", configData);
+
   return (
     <>
       <TopBarButton

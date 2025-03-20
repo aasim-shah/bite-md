@@ -1233,4 +1233,9 @@ export const arabic = {
     "وفقًا للوائح الحكومية، تعتبر الوصفة الطبية إلزامية عند طلب بعض الأدوية.",
   "No problem if you can't understand the doctor's handwriting, our Pharmacist will assist you in ordering the medicine by viewing the prescription.":
     "ل الاطلاع على الوصفة الطبية.",
+  home: "الرئيسية",
+  aboutUs: "معلومات عنا",
+  privacy: "سياسة الخصوصية",
+  terms: "الشروط والأحكام",
+  contactUs: "اتصل بنا",
 };

@@ -1277,4 +1277,9 @@ export const english = {
     "No problem if you can't understand the doctor's handwriting, our Pharmacist will assist you in ordering the medicine by viewing the prescription.",
   "Max size 2MB": "Max size 2MB",
   "Admin charge test": "Admin charge test",
+  home: "Home",
+  aboutUs: "About Us",
+  privacy: "Privacy Policy",
+  terms: "Terms and Conditions",
+  contactUs: "Contact Us",
 };

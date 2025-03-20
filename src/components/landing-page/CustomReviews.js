@@ -1,26 +1,7 @@
 import { Box, Typography, Grid, Paper, Rating, useTheme } from "@mui/material";
 import { styled } from "@mui/system";
-
-const reviewsData = [
-  {
-    name: "John Doe",
-    review: "Amazing service! The process was smooth and hassle-free.",
-    rating: 5,
-    bgImage: "/landingpage/review-bg-1.jpg",
-  },
-  {
-    name: "Emily Smith",
-    review: "Very professional and reliable. Highly recommended!",
-    rating: 4.5,
-    bgImage: "/landingpage/review-bg-2.jpg",
-  },
-  {
-    name: "Michael Johnson",
-    review: "A fantastic experience from start to finish!",
-    rating: 5,
-    bgImage: "/landingpage/review-bg-3.jpg",
-  },
-];
+import { t } from "i18next";
+import { useEffect, useState } from "react";
 
 // Styled Card with Background Image
 const ReviewCard = styled(Paper)(({ bgImage }) => ({
@@ -29,8 +10,16 @@ const ReviewCard = styled(Paper)(({ bgImage }) => ({
   borderRadius: "2rem",
 }));
 
-const CustomReviews = () => {
+const CustomReviews = (data, isSmall) => {
   const theme = useTheme();
+  const [testimonial_list, setTestimonial_list] = useState([]);
+
+  useEffect(() => {
+    if (data.data && data.data.testimonial_list.length > 0) {
+      setTestimonial_list(data.data.testimonial_list);
+    }
+  }, [data]);
+
   return (
     <Box
       sx={{
@@ -43,12 +32,12 @@ const CustomReviews = () => {
     >
       {/* Title */}
       <Typography variant="h4" color={"white"} fontWeight={700} mb={10}>
-        Reviews
+        {t("Reviews")}
       </Typography>
 
       {/* Reviews Grid */}
       <Grid container spacing={4} justifyContent="center">
-        {reviewsData.map((review, index) => (
+        {testimonial_list.map((review, index) => (
           <Grid key={index} item xs={12} sm={6} md={4}>
             <ReviewCard elevation={3} bgImage={review.bgImage}>
               <Typography
@@ -62,7 +51,7 @@ const CustomReviews = () => {
               <Typography variant="body1" color={theme.palette.blue} mb={2}>
                 {review.review}
               </Typography>
-              <Rating value={review.rating} precision={0.5} readOnly />
+              <Rating value={5} precision={0.5} readOnly />
             </ReviewCard>
           </Grid>
         ))}

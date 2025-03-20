@@ -7,23 +7,28 @@ import {
   useTheme,
 } from "@mui/material";
 import Image from "next/image";
+import Link from "next/link";
 
-const earnMoneyData = [
-  {
-    imageSrc: "/landingpage/vendor-1.png",
-    title: "Become a Courier",
-    buttonText: "Register here",
-  },
-  {
-    imageSrc: "/landingpage/vendor-2.png",
-    title: "Become a Partner",
-    buttonText: "Register here",
-  },
-];
-
-const EarnMoney = () => {
+const EarnMoney = ({ configData, data, isSmall }) => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+
+  console.log({ earningData: data });
+
+  const earnMoneyData = [
+    {
+      imageSrc: "/landingpage/vendor-1.png",
+      title: data.earning_seller_title,
+      buttonText: data.earning_seller_button_name,
+      link: data.earning_seller_button_url,
+    },
+    {
+      imageSrc: "/landingpage/vendor-2.png",
+      title: data.earning_dm_title,
+      buttonText: data.earning_dm_button_name,
+      link: data.earning_dm_button_url,
+    },
+  ];
 
   return (
     <Box
@@ -46,7 +51,7 @@ const EarnMoney = () => {
       >
         {/* Title */}
         <Typography variant="h4" color="white" fontWeight={700} mb={4}>
-          Earn Money
+          {data.earning_title}
         </Typography>
 
         {/* Cards Section */}
@@ -74,13 +79,22 @@ const EarnMoney = () => {
                 <Typography color="white" variant="h6" fontWeight={600} mb={2}>
                   {item.title}
                 </Typography>
-                <Button
-                  variant="contained"
-                  color="primary"
-                  sx={{ borderRadius: "20px", padding: "0.8rem 2rem" }}
+                <Link
+                  href={item.link}
+                  style={{
+                    textDecoration: "none",
+                    backgroundColor: theme.palette.primary.main,
+                    color: theme.palette.primary.contrastText,
+                    borderRadius: "20px",
+                    padding: ".5rem 1.5rem",
+                    fontSize: "1.2rem",
+                    fontWeight: 500,
+                    textTransform: "none",
+                    marginBottom: "1rem",
+                  }}
                 >
                   {item.buttonText}
-                </Button>
+                </Link>
               </Box>
             </Grid>
           ))}

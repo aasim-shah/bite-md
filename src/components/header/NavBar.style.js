@@ -169,12 +169,12 @@ export const StyledMenu = styled((props) => (
 }));
 export const NavLinkStyle = styled(Stack)(({ theme, language_direction }) => ({
   color: `${theme.palette.mode === "dark" ? "#fff" : "#000"}`,
-  fontSize: "16px",
+  fontSize: "13px",
 
   // marginRight: language_direction === 'rtl' ? '16px' : '0px',
   underLine: "none",
   "&:hover": {
-    color: theme.palette.primary.main,
+    color: theme.palette.blue,
   },
 }));
 export const SignInButton = styled(Button)(({ theme }) => ({
