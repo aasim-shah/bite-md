@@ -25,7 +25,7 @@ const CustomReviews = (data, isSmall) => {
       sx={{
         textAlign: "center",
         backgroundImage: `url(/landingpage/orange.png)`,
-
+        backgroundSize: "cover",
         py: "8rem",
         px: "2rem",
       }}

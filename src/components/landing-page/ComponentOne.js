@@ -64,15 +64,15 @@ const ComponentOne = ({ landingPageData, configData, handleOrderNow }) => {
         >
           <div
             style={{
-              backgroundColor: "#FFF7EA",
-              width: "80%",
+              backgroundColor: theme.palette.cream,
+              width: "90%",
               height: "55rem",
               margin: " auto",
               position: "absolute",
               flexDirection: "column",
               justifyContent: "center",
               alignItems: "center",
-              top: "-10rem",
+              top: "-14rem",
               borderRadius: "20px",
               display: "flex",
             }}

@@ -127,7 +127,7 @@ const LandingPage = ({ configData, landingPageData }) => {
           style={{
             backgroundColor: "#263471",
             padding: "0px",
-            width: "60%",
+            width: "75%",
             borderRadius: "3rem",
             marginTop: "0px",
             margin: "auto",

@@ -53,7 +53,7 @@ const ComponentThree = () => {
     <Box sx={{ padding: "0px" }}>
       <Box
         sx={{
-          backgroundColor: "#FDEADB",
+          backgroundColor: theme.palette.cream,
           borderRadius: "3rem",
           padding: { xs: "2rem", md: "4rem" },
           display: "flex",
